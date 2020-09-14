@@ -72,7 +72,7 @@ git reset --hard 01e31c
 
 10.如何修改倒数第 5 次（HEAD~5）提交的 message 信息。如果要将此次修改同步到远程仓库，如何操作？应该注意什么，如果不注意会造成什么后果
 
-
+git rebase -i HEAD~5
 
 11.简述 merge 和 rebase的区别。
 
