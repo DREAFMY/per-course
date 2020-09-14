@@ -73,16 +73,30 @@ git reset --hard 01e31c
 10.如何修改倒数第 5 次（HEAD~5）提交的 message 信息。如果要将此次修改同步到远程仓库，如何操作？应该注意什么，如果不注意会造成什么后果
 
 
+
 11.简述 merge 和 rebase的区别。
 
+merge命令不会保留merge的分支的commit
+使用merge命令合并分支，解决完冲突，执行add和commit，这个时候会产生一个commit。使用rebase命令合并分支，解决完冲突，执行add和rebase --continue，不会产生额外的commit。
 
 
 12.简述fetch 分别与 pull和 pull --rebase的区别。
 
+都是从远程拉取代码到本地，git fetch只是拉取到本地，git pull不仅拉取到本地还merge到本地分支中。所以git pull是git fetch与git merge的集合体。
 
 
 13.简述 git 中工作区、暂存区和版本库的区别。
 
+工作区：电脑里能看到的目录。
 
+暂存区：英文叫stage, 或index。一般存放在 ".git目录下" 下的index文件（.git/index）中，所以我们把暂存区有时也叫作索引（index）。
+版本库：工作区有一个隐藏目录.git，这个不算工作区，而是Git的版本库。
 
 14.简述使用 feature 分支模式进行开发的流程中（拉取代码、创建分支、开发完成后合并分支解决冲突）如何使用一些列的 git 命令。（如 pull, commit, merge, add, fetch,push等）
+
+查看分支：git branch
+创建分支：git branch <name>
+切换分支：git checkout <name>
+创建+切换分支：git checkout -b <name>
+合并某分支到当前分支：git merge <name>
+删除分支：git branch -d <name>
