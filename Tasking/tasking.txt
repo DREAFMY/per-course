@@ -1,0 +1,139 @@
+情景题
+在下列给定的描述和需求下，完成任务拆解。
+
+题目一: 网站主页（30分）
+需求：给定以下Mockup，你会如何完成这个页面的前端实现，请写出你的Task列表并简单描述每一项任务。
+
+NOTE：Featured Area区域的所有数据需要请求已经完成的一个后端API，其余部分都是纯文本静态展示。
+
+Task1：头部导航
+	ST-1：完成HTML编写
+	ST-2：在页面渲染数据
+	ST-3：实现样式CSS
+Task2：轮播图
+	ST-1：完成HTML编写
+	ST-2：在页面渲染数据
+	ST-3：实现样式CSS
+Task3：Feature Area
+	Sub-Task1：信息展示
+		ST-1：发送请求获取数据
+		ST-2：完成HTML编写
+		ST-3：在页面渲染数据
+		ST-4：实现样式CSS
+	Sub-Task2：Read More
+		ST-1：完成HTML编写
+		ST-2：在页面渲染数据
+		ST-3：实现样式CSS
+
+
+
+题目二：获取用户微博的API（30分）
+描述：在微博平台，通过用户ID获取用户微博（包括：内容、时间、评论、点赞量），可自定义返回微博条数，并且微博按照时间降序排列（新发布的在前）。
+
+需求：根据描述API，写出你的Task列表并简单描述每一项任务。
+
+Task1：ID存在时
+	Sub-Task1：正确获取用户微博信息
+		ST-1：设计数据库表，包含字段内容、时间、评论、点赞量
+		ST-2：定义一个请求的Request对象
+		ST-3：Repository：通过学号查询学生成绩
+		ST-4：编写Service测试
+		ST-5：Service：调用Repository方法
+		ST-6：编写Controller测试
+		ST-7：Controller：调用Service方法
+	Sub-Task2：可自定义查询返回微博数量
+		ST-1：增加Repository查询数量变量
+		ST-2：编写Service测试
+		ST-3：重构Service方法
+		ST-4：编写Controller测试
+		ST-5：重构Controller方法
+	Sub-Task3：返回数据按时间降序排列
+		ST-1：修改Repository查询sort值
+		ST-2：编写Service测试
+		ST-4：编写Controller测试
+Task2：ID不存在时，返回提示信息
+	ST-1：编写测试
+	ST-2：重构Service方法，添加ID是否存在判断
+	ST-2：重构Controller方法，添加ID是否存在判断
+	ST-3：复写Except接口
+
+
+
+题目三：餐饮服务评价调查问卷（40分）
+描述：餐厅想通过顾客用餐后填写调查问卷，收集社会不同职业与点菜品种的对应关系，帮助餐厅调研分析，并且收集顾客对餐厅的评价用于改进服务。现在，需要开发人员在餐厅网站上创建“调查问卷”页面，可以让用户填写个人信息（姓名、性别、年龄、职业、品尝菜品列表）以及对餐厅餐饮的评价（餐厅环境、菜品质量、服务评价）。客户填写完成后，进入“表单完成”页面（也是一个新页面），客户可以看到自己填写内容以及餐厅的感谢语。
+
+需求：根据描述，请写出你的Task列表并简单描述每一项任务。
+
+Task1：个人信息
+        后端：
+	Sub-Task1：正确接收用户填写信息
+		ST-1：设计数据库表，包含姓名、性别、年龄、职业、品尝菜品列表
+		ST-2：定义一个请求的Request对象
+		ST-3：编写Service测试
+		ST-4：Service：调用Repository方法
+		ST-5：编写Controller测试
+		ST-6：Controller：调用Service方法
+		ST-7：Repository：存入用户数据
+	Sub-Task2：信息异常报错
+		ST-1：编写测试
+		ST-2：重构Service方法，添加信息异常判断
+		ST-2：重构Controller方法，添加信息异常判断
+		ST-3：复写Except接口
+        前端：
+	Sub-Task1：用户信息的填写
+		ST-1：编写HTML
+		ST-2：实现CSS样式
+		ST-3：连接API发送请求数据
+	Sub-Task2：数据请求后，返回结果展示
+		ST-1：编写HTML
+		ST-2：实现CSS样式
+		ST-2：展示返回信息
+Task2：对餐厅餐饮评价
+        后端：
+	Sub-Task1：正确获取用户填写信息
+		ST-1：定义一个请求的Request对象
+		ST-2：Repository：通过学号查询学生成绩
+		ST-3：编写Service测试
+		ST-4：Service：调用Repository方法
+		ST-5：编写Controller测试
+		ST-6：Controller：调用Service方法
+	Sub-Task2：信息异常报错
+		ST-1：编写测试
+		ST-2：重构Service方法，添加信息异常判断
+		ST-2：重构Controller方法，添加信息异常判断
+		ST-3：复写Except接口
+        前端：
+	Sub-Task1：用户信息的填写
+		ST-1：编写HTML
+		ST-2：实现CSS样式
+		ST-3：连接API发送请求数据
+	Sub-Task2：数据请求后，返回结果展示
+		ST-1：编写HTML
+		ST-2：实现CSS样式
+		ST-2：展示返回信息
+Task3：表单完成页面信息展示
+        后端：
+	Sub-Task1：正确接收用户填写信息
+		ST-1：设计数据库表，包含姓名、性别、年龄、职业、品尝菜品列表
+		ST-2：定义一个请求的Request对象
+		ST-3：编写Service测试
+		ST-4：Service：调用Repository方法
+		ST-5：编写Controller测试
+		ST-6：Controller：调用Service方法
+		ST-7：Repository：存入用户数据
+	Sub-Task2：信息异常报错
+		ST-1：编写测试
+		ST-2：重构Service方法，添加信息异常判断
+		ST-2：重构Controller方法，添加信息异常判断
+		ST-3：复写Except接口
+        前端：
+	Sub-Task1：用户信息的展示
+		ST-1：完成跳转按钮并成功跳转新页面
+		ST-1：发送请求获取数据
+		ST-2：完成HTML编写
+		ST-3：在页面渲染数据
+		ST-4：实现样式CSS
+	Sub-Task2：数据请求后，返回结果展示
+		ST-1：编写HTML
+		ST-2：实现CSS样式
+		ST-2：展示返回信息
