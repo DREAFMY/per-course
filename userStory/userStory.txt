@@ -1,0 +1,22 @@
+简答题
+1. 用自己的话描述什么是用户故事。
+就是一个用于记录用户需求和需求变化的载体，细致到功能细节，一般以卡片形式呈现。
+
+2. 用户故事的3Cs是什么？
+Card,Conversion,Confirmation
+
+3. 一个用户故事一般包含哪些内容？并简述每一部分内容。
+概览和详情两个部分，概览：包含用户故事标题和编号；详情：包含需求描述、验收标准和附件。
+
+4. 什么是Acceptance Criteria？
+验收标准，它定义了需求细节以及如何验收该需求。
+
+情景题
+根据以下需求，写出Acceptance Criteria。
+As a ThoughtWorker
+I want to order coffee using coins
+So that I can stay awake during sessions
+
+given： a ThoughtWorker
+when：using coins to order coffee
+then:  stay awake during sessions
