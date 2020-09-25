@@ -41,7 +41,6 @@ public class GoodControllerTest {
 
     @Test
     public void should_get_goods_list() throws Exception {
-        String jsonString = objectMapper.writeValueAsString(goods);
         mockMvc.perform(get("/goods"))
                 .andExpect(jsonPath("$.name",is("coffe")))
                 .andExpect(jsonPath("$.unit",is("ting")))
