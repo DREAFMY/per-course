@@ -31,7 +31,7 @@ public class GoodControllerTest {
     @BeforeEach
     void setUp() {
         objectMapper = new ObjectMapper();
-        goods = new Goods(1, 1, "coffe", "ting", "https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=2693181789,3140146792&fm=26&gp=0.jpg");
+        goods = new Goods(1, "coffe", "ting", "https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=2693181789,3140146792&fm=26&gp=0.jpg");
     }
 
     @AfterEach
@@ -46,7 +46,6 @@ public class GoodControllerTest {
                 .andExpect(jsonPath("$.name",is("coffe")))
                 .andExpect(jsonPath("$.unit",is("ting")))
                 .andExpect(jsonPath("$.price",is(1)))
-                .andExpect(jsonPath("$.num",is(1)))
                 .andExpect(jsonPath("$.url",is("https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=2693181789,3140146792&fm=26&gp=0.jpg")))
                 .andExpect(status().isOk());
     }
@@ -60,7 +59,6 @@ public class GoodControllerTest {
                 .andExpect(jsonPath("$.name",is("coffe")))
                 .andExpect(jsonPath("$.unit",is("ting")))
                 .andExpect(jsonPath("$.price",is(1)))
-                .andExpect(jsonPath("$.num",is(1)))
                 .andExpect(jsonPath("$.url",is("https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=2693181789,3140146792&fm=26&gp=0.jpg")))
                 .andExpect(status().isOk());
     }

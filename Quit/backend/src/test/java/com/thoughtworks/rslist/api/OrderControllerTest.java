@@ -1,4 +1,4 @@
 package com.thoughtworks.rslist.api;
 
-public class GoodsServiceTest {
+public class OrderControllerTest {
 }

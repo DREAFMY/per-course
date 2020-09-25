@@ -29,11 +29,11 @@ public class GoodsController {
         GoodsPO goodsPO = GoodsPO.builder()
                 .name(goods.getName())
                 .price(goods.getPrice())
-                .num(goods.getNum())
                 .unit(goods.getUnit())
                 .url(goods.getUrl())
                 .build();
         goodsRepository.save(goodsPO);
         return ResponseEntity.created(null).build();
     }
+
 }

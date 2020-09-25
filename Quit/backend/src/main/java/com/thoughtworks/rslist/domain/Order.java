@@ -9,9 +9,7 @@ import lombok.NoArgsConstructor;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class Goods {
-    private int price;
-    private String name;
-    private String unit;
-    private String url;
+public class Order {
+    private int num;
+    private int goodsId;
 }
