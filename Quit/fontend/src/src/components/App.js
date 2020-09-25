@@ -8,29 +8,6 @@ import Add from "./Add";
 import Header from "./Header";
 
 class App extends Component {
-  state = {
-    list: [
-      { id: 1, name: "可乐", price: 20, num: 1, unit: "听", url: "sfafaffa" },
-    ],
-  };
-  addList = (data) => {
-    console.log(data)
-    // if (!data) return;
-    // let isFind = false;
-    // let temp = this.state.list;
-    // this.state.list.map((i, index) => {
-    //   if (i.id == data.id) {
-    //     temp[index].num += 1;
-    //     isFind = true;
-    //   }
-    // });
-    // if (!isFind) {
-    //   temp.push(data);
-    // }
-    // this.setState({
-    //   list: temp,
-    // });
-  };
   render() {
     return (
       <BrowserRouter>
@@ -41,12 +18,12 @@ class App extends Component {
               <Route
                 exact
                 path="/"
-                component={() => <Mall addList={this.addList} />}
+                component={Mall}
               />
               <Route
                 exact
                 path="/list"
-                component={() => <List listData={this.state.list} />}
+                component={List}
               />
               <Route exact path="/add" component={Add} />
               <Route component={Mall} />

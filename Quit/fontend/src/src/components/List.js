@@ -1,6 +1,14 @@
 import React, { Component } from "react";
 
 class List extends Component {
+  state = {
+    listData: [
+      { id: 1, name: "可乐", price: "2", num: 1, unit: "听" },
+      { id: 2, name: "coffee", price: "23", num: 1, unit: "杯" },
+      { id: 3, name: "coco", price: "11", num: 1, unit: "杯" },
+      { id: 4, name: "奶茶", price: "12", num: 1, unit: "杯" },
+    ],
+  };
   render() {
     return (
       <div className="list">
@@ -15,8 +23,8 @@ class List extends Component {
             </tr>
           </thead>
           <tbody>
-            {this.props.listData.map((res) => (
-              <tr>
+            {this.state.listData.map((res) => (
+              <tr key={res.id}>
                 <td>{res.name}</td>
                 <td>{res.price}</td>
                 <td>{res.num}</td>
