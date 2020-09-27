@@ -1,0 +1,36 @@
+简答题
+1. 用自己的话简述INVEST原则每个字母的含义。
+I：independent 独立的，不能有强依赖但是可以有顺序的
+N：negotiable 可协商的，澄清问题可以修改
+V：valuable 有价值的，有业务价值存在意义的
+E：estimable 可估计的，可以对其估点
+S：small 小的，不能超过一个迭代
+T：testable 可测试的，不能太主观的定义，太主观定义无法测试
+
+
+2. 用自己的话简述用户故事两种常见的切分方式。
+垂直切分：每个交互的用户故事都是可用的，但是这样切分对开发人员要求有点高
+水平切分：前端开发人员关注前端用户故事，后端开发人员关注后端用户故事，增加了沟通成本
+
+
+情景题
+根据以下用户故事概述，判断该用户故事是不是符合INVEST原则？如果不符合，说明违背了哪个或哪几个原则，并解释原因。
+
+<Case 1> 
+As a customer,
+I want to be able to shop online
+So that I can do it wherever and whenever I want, without physically going to the store
+不符合，negotiable，estimable，small，testable
+
+<Case 2>
+As a customer
+I want to update and delete items in my shopping cart
+So that I can change my mind about what to buy
+不符合，negotiable，estimable，testable
+
+
+<Case 3>
+As a customer
+I want to search for the items that I needed to buy
+So that I can select the items I need to buy
+符合

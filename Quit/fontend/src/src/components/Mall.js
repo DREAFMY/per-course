@@ -12,6 +12,17 @@ class Mall extends Component {
       { id: 5, name: "可asv乐", price: 5, unit: "听", url: imgUrl },
     ],
   };
+  
+  componentDidMount = async () => {
+    try {
+      const response = await fetch('http://localhost:8080/products');
+      const reception = await response.json();
+      this.tranData(reception);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
   render() {
     return (
       <div className="mall">

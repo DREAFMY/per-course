@@ -1,7 +1,6 @@
 package com.thoughtworks.rslist.api;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.thoughtworks.rslist.domain.Goods;
 import com.thoughtworks.rslist.domain.Order;
 import com.thoughtworks.rslist.po.GoodsPO;
 import com.thoughtworks.rslist.po.OrderPO;
@@ -54,9 +53,11 @@ public class OrderControllerTest {
 
     @Test
     public void should_get_order_list() throws Exception {
+        OrderPO orderPO = OrderPO.builder().num(1).goodsId(save.getId()).build();
+        orderRepository.save(orderPO);
         mockMvc.perform(get("/order"))
-                .andExpect(jsonPath("$.num",is(1)))
-                .andExpect(jsonPath("$.goodsId",is(save.getId())))
+                .andExpect(jsonPath("$[0].num",is(1)))
+                .andExpect(jsonPath("$[0].goodsId",is(save.getId())))
                 .andExpect(status().isOk());
     }
 
@@ -66,8 +67,8 @@ public class OrderControllerTest {
         mockMvc.perform(get("/order/{goodsId}",goodsId))
                 .andExpect(status().isOk());
         mockMvc.perform(get("/order"))
-                .andExpect(jsonPath("$.num",is(1)))
-                .andExpect(jsonPath("$.goodsId",is(save.getId())))
+                .andExpect(jsonPath("$[0].num",is(1)))
+                .andExpect(jsonPath("$[0].goodsId",is(save.getId())))
                 .andExpect(status().isOk());
     }
 
@@ -79,8 +80,8 @@ public class OrderControllerTest {
         mockMvc.perform(get("/order/{goodsId}",goodsId))
                 .andExpect(status().isOk());
         mockMvc.perform(get("/order"))
-                .andExpect(jsonPath("$.num",is(3)))
-                .andExpect(jsonPath("$.goodsId",is(save.getId())))
+                .andExpect(jsonPath("$[0].num",is(3)))
+                .andExpect(jsonPath("$[0].goodsId",is(save.getId())))
                 .andExpect(status().isOk());
     }
 }
