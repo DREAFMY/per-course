@@ -1,0 +1,34 @@
+判断题
+判断下列描述是否正确。如果错误，请简述原因。
+1. 当Dev需要拿新故事卡开发时，需要在Ready for Dev列挑选一张自己熟悉的卡开发，因为这样Dev不用花太多时间了解上下文，可以提升交付速度。
+错，Dev拿到这张卡后，不是直接上手做，而是去阅读理解卡的全部内容。
+
+
+2. Dev阅读故事卡后，发现自己故事卡的描述非常清楚，对业务也十分熟悉，自己没有相关问题，这时Dev可以直接将卡挪到In Dev列，然后进行开发
+错，要进行kickoff，保证所有角色对这张卡的理解是一致的。
+
+
+3. 一对Dev开发结对完成一张故事卡后，因为这张故事卡十分简单，涉及内容很少，只修改了几行代码就完成了功能，并且经过结对完成，自信不会有问题，直接将卡挪至Ready for QA列。
+错，要进行Desk Check / Sign off，演示该故事卡的内容，确认AC都能正确实现。
+
+
+4. 团队在给客户Showcase时，客户觉得一张故事卡的用户交互与自己的想法不一致，不能给用户使用。团队决定将这个用户故事先挪到Ready for Prod列，然后再创建一张新卡实现客户建议的交互方式。 
+错，要根据问题的大小来判断，是创建新的故事卡还是把当前故事卡拖回ready for dev。
+
+
+5. 作为交付团队的Dev，需要尽可能快的完成迭代故事卡的开发，即便很多故事卡在Ready for QA列，Dev还是更应该专注于将Ready for Dev列的卡完成。
+错，我们是整个团队，有时候dev需要去扮演qa的角色，qa学要去扮演ba角色，当我们发现任何一列或者角色成为交互的blocker的时候，我们要尽快去解决，而不是只扮演自己的角色。
+
+
+6. Dev在做Kick-off之前只需要大致浏览故事卡内容即可，因为在Kick-off过程中BA和XD会详细介绍卡的内容。
+错，要仔细阅读和理解，找出自己有疑问的地方并记录下来。
+
+
+7. 在做Desk Check的时候，Dev主要叫上QA一起即可，因为是检查故事卡的AC有没有完成。
+错，需要Dev主导，BA，QA和XD参与，最终有BA和XD确认实现的功能真的是想要的。
+
+
+简答题
+1. 用自己的话简述用户故事卡从Ready for Dev列到In Prod列涉及到的生命周期以及卡挪动的过程。(呈现形式不限)
+ready for dev --kickoff--> in dev --desk check / sign off--> ready for qa ----> in qa --testing ok--> ready for showcase --showcase ok--> ready for prod --deployment--> in prod
+                                                                                                                                     problems--> ready for dev                  problems--> ready for dev
