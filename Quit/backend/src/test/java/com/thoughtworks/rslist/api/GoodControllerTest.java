@@ -35,10 +35,10 @@ public class GoodControllerTest {
         goods = new Goods(1, "coffe", "ting", "https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=2693181789,3140146792&fm=26&gp=0.jpg");
     }
 
-    @AfterEach
-    void cleanPlat() {
-        goodsRepository.deleteAll();
-    }
+//    @AfterEach
+//    void cleanPlat() {
+//        goodsRepository.deleteAll();
+//    }
 
     @Test
     public void should_get_goods_list() throws Exception {

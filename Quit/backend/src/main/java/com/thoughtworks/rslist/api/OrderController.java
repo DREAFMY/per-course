@@ -39,12 +39,14 @@ public class OrderController {
     @CrossOrigin
     public ResponseEntity addOrder(@PathVariable int goodsId) {
         OrderPO orderPO1 = orderRepository.findByGoodsId(goodsId);
-        Optional<GoodsPO> goodsPO1 = goodsRepository.findById(goodsId);
+//        GoodsPO goodsPO1 = goodsRepository.findById(goodsId);
         if ( orderPO1 == null) {
             orderPO = OrderPO.builder()
                     .num(1)
                     .goodsId(goodsId)
-                    .name(goodsPO1.get(0).getName())
+//                    .name(goodsPO1.getName())
+//                    .price(goodsPO1.getPrice())
+//                    .unit(goodsPO1.getUnit())
                     .build();
             orderRepository.save(orderPO);
         } else {

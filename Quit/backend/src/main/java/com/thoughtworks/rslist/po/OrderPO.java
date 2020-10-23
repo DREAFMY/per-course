@@ -22,4 +22,7 @@ public class OrderPO {
     private int id;
     private int num;
     private int goodsId;
+    private int price;
+    private String name;
+    private String unit;
 }

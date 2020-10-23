@@ -15,6 +15,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.web.servlet.MockMvc;
 
 import static org.hamcrest.Matchers.is;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.delete;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
@@ -82,6 +83,14 @@ public class OrderControllerTest {
         mockMvc.perform(get("/order"))
                 .andExpect(jsonPath("$[0].num",is(3)))
                 .andExpect(jsonPath("$[0].goodsId",is(save.getId())))
+                .andExpect(status().isOk());
+    }
+
+    @Test
+    public void should_delete_order() throws Exception {
+        OrderPO orderPO = OrderPO.builder().num(2).goodsId(save.getId()).build();
+        OrderPO saveOrder = orderRepository.save(orderPO);
+        mockMvc.perform(delete("/order/{orderId}",saveOrder.getId()))
                 .andExpect(status().isOk());
     }
 }

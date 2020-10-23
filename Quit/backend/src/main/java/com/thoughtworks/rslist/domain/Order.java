@@ -12,4 +12,7 @@ import lombok.NoArgsConstructor;
 public class Order {
     private int num;
     private int goodsId;
+//    private int price;
+//    private String name;
+//    private String unit;
 }
