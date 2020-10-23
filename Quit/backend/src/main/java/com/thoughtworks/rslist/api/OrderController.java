@@ -1,6 +1,7 @@
 package com.thoughtworks.rslist.api;
 
 import com.thoughtworks.rslist.BO.OrderBO;
+import com.thoughtworks.rslist.domain.Goods;
 import com.thoughtworks.rslist.domain.Order;
 import com.thoughtworks.rslist.po.GoodsPO;
 import com.thoughtworks.rslist.po.OrderPO;
