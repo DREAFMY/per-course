@@ -41,10 +41,10 @@ Cross Device Test：在Windows操作系统的Desktop、Linux系统的笔记本�
 
 2. 根据以下代码，简单写出测试用例以满足不同维度（Function Coverage/Statement Coverage/Branch Coverage/Condition Coverage）的代码覆盖率。
 举例：XXXX Coverage：测试用例包括calculate(1, 3)和calculate(2, 4)，并简述原因即可。
-Function Coverage：1/2，有两个function，只测试了其中一个。
-Statement Coverage：3/11，一共十一行代码，只调用了三行。
-Branch Coverage：1/3，有三个分支price<10和10<=price<25和price>=25,只测试了一个分支。
-Condition Coverage：1/4，有四个true/false的判断地方，只测试了一处。
+Function Coverage：测试用例包括calculate(1, 3)和calculateDiscountPrice(1, 3),两个方法都被调用。
+Statement Coverage：测试用例包括calculate(1, 3)，alculate(11, 3)，alculate(11, 33)，每行都覆盖到了。
+Branch Coverage：calculate(1, 3)，alculate(11, 3)，alculate(11, 33)，calculate(111, 3)，每个测试分支都覆盖到了。
+Condition Coverage：calculate(1, 3)，alculate(11, 3)，alculate(11, 33)，calculate(11, 333)，alculate(111, 3)，每个判断条件都覆盖到了。
 
 
 情景题
