@@ -30,9 +30,16 @@ class Add extends Component {
         this.setState({
           tip: "添加商品失败，请稍后重试",
         });
+      })
+      .finally(() => {
+        alert(this.state.tip);
       });
   };
   handleChange = (event) => {
+    if (event.target.name === "price" && event.target.value < 0) {
+      alert("请输入大于或等于0的数字");
+      return;
+    }
     this.setState({
       params: {
         ...this.state.params,
@@ -91,27 +98,17 @@ class Add extends Component {
           <button
             type="submit"
             className="btn btn-primary"
+            disabled={
+              this.state.params.name === "" ||
+              this.state.params.price < 0 ||
+              this.state.params.unit === "" ||
+              this.state.params.url === ""
+            }
             onClick={this.toAddGoods}
           >
             Submit
           </button>
         </form>
-        <div id="myModal" class="modal fade" tabindex="-1" role="dialog">
-          <div class="modal-dialog" role="document">
-            <div class="modal-content">
-              {this.state.tip}
-              <div class="modal-footer">
-                <button
-                  type="button"
-                  class="btn btn-primary"
-                  data-dismiss="modal"
-                >
-                  关闭
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
     );
   }
