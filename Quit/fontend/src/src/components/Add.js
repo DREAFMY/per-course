@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { browserHistory } from "react-router";
 import axios from "axios";
 
 class Add extends Component {
@@ -10,9 +11,32 @@ class Add extends Component {
       url: "",
     },
     tip: "",
+    listData: [],
+    isHave: false,
+  };
+  componentDidMount() {
+    this.getOrderList();
+  }
+  getOrderList = () => {
+    axios.get("http://localhost:8080/goods").then((res) => {
+      this.setState({
+        listData: res.data,
+      });
+    });
   };
   toAddGoods = (event) => {
     event.preventDefault();
+    if (this.state.isHave) {
+      alert("该商品名已存在，请换个名字输入");
+      this.setState({
+        isHave: false,
+        params: {
+          ...this.state.params,
+          name: "",
+        },
+      });
+      return;
+    }
     axios
       .post("http://localhost:8080/goods", this.state.params)
       .then(() => {
@@ -25,6 +49,7 @@ class Add extends Component {
           },
           tip: "添加商品成功",
         });
+        //  browserHistory.push("/");
       })
       .catch(() => {
         this.setState({
@@ -39,6 +64,15 @@ class Add extends Component {
     if (event.target.name === "price" && event.target.value < 0) {
       alert("请输入大于或等于0的数字");
       return;
+    }
+    if (event.target.name === "name") {
+      this.state.listData.forEach((res) => {
+        if (res.name === event.target.value) {
+          this.setState({
+            isHave: true,
+          });
+        }
+      });
     }
     this.setState({
       params: {
