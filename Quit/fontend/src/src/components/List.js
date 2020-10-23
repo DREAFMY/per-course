@@ -1,13 +1,25 @@
 import React, { Component } from "react";
+import axios from "axios";
 
 class List extends Component {
   state = {
-    listData: [
-      { id: 1, name: "可乐", price: "2", num: 1, unit: "听" },
-      { id: 2, name: "coffee", price: "23", num: 1, unit: "杯" },
-      { id: 3, name: "coco", price: "11", num: 1, unit: "杯" },
-      { id: 4, name: "奶茶", price: "12", num: 1, unit: "杯" },
-    ],
+    listData: [],
+  };
+  componentDidMount() {
+    this.getOrderList();
+  }
+  getOrderList = () => {
+    axios.get("http://localhost:8080/order").then((res) => {
+      this.setState({
+        listData: res.data,
+      });
+    });
+  };
+  deleteOrder = (orderId) => {
+    axios.delete("http://localhost:8080/order/" + orderId).then((res) => {
+      console.log("delete success");
+      this.getOrderList();
+    });
   };
   render() {
     return (
@@ -23,19 +35,24 @@ class List extends Component {
             </tr>
           </thead>
           <tbody>
-            {this.state.listData.map((res) => (
-              <tr key={res.id}>
-                <td>{res.name}</td>
-                <td>{res.price}</td>
-                <td>{res.num}</td>
-                <td>{res.unit}</td>
-                <td>
-                  <button type="button" className="btn btn-danger">
-                    删 除
-                  </button>
-                </td>
-              </tr>
-            ))}
+            {this.state.listData.length > 0 &&
+              this.state.listData.map((res) => (
+                <tr key={res.id}>
+                  <td>{res.name}</td>
+                  <td>{res.price}</td>
+                  <td>{res.num}</td>
+                  <td>{res.unit}</td>
+                  <td>
+                    <button
+                      type="button"
+                      className="btn btn-danger"
+                      onClick={() => this.deleteOrder(res.id)}
+                    >
+                      删 除
+                    </button>
+                  </td>
+                </tr>
+              ))}
           </tbody>
         </table>
       </div>
