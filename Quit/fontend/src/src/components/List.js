@@ -1,9 +1,15 @@
 import React, { Component } from "react";
 import axios from "axios";
+// import { Table } from "ante";
 
 class List extends Component {
   state = {
     listData: [],
+    isLoading: false,
+    pageSize: 0,
+    current: 0,
+    total: 0,
+    pageOn: 0,
   };
   componentDidMount() {
     this.getOrderList();
@@ -21,9 +27,66 @@ class List extends Component {
       this.getOrderList();
     });
   };
+  // changePageSize = (current, pageSize) => {
+  //   this.setFilterPageState({ current, pageSize }, this.getOrderList);
+  // };
+  // changePage = async (current) => {
+  //   this.setFilterPageState({ current }, this.getOrderList);
+  // };
   render() {
+    // const columns = [
+    //   {
+    //     title: "名字",
+    //     dataIndex: "name",
+    //   },
+    //   {
+    //     title: "单价",
+    //     dataIndex: "price",
+    //   },
+    //   {
+    //     title: "数量",
+    //     dataIndex: "num",
+    //   },
+    //   {
+    //     title: "单位",
+    //     dataIndex: "unit",
+    //   },
+    //   {
+    //     title: "操作",
+    //     key: "operation",
+    //     render: (text, record) => (
+    //       <button
+    //         type="button"
+    //         className="btn btn-danger"
+    //         onClick={() => this.deleteOrder(record.id)}
+    //       >
+    //         删 除
+    //       </button>
+    //     ),
+    //   },
+    // ];
+    // const pagination = {
+    //   showSizeChanger: true,
+    //   pageSize: this.state.pageSize,
+    //   current: this.state.current,
+    //   showQuickJumper: true,
+    //   hideOnSinglePage: true,
+    //   onChange: this.changePage,
+    //   onShowSizeChange: this.changePageSize,
+    //   total: this.state.total,
+    // };
     return (
       <div className="list">
+        {/* <Table
+          columns={columns}
+          loading={this.state.isLoading}
+          dataSource={this.state.listData}
+          rowKey={(record) => record.id}
+          pagination={pagination}
+        />
+        {this.state.total <= this.state.pageSize &&
+          !this.state.isLoading &&
+          this.renderSelectPageSize()} */}
         <table className="table">
           <thead className="thead-dark">
             <tr>

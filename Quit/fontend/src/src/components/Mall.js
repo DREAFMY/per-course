@@ -3,6 +3,10 @@ import axios from "axios";
 
 class Mall extends Component {
   state = {
+    total: 0, //总条数
+    size: 10, //分页大小-默认为0
+    pages: 1, //总页数
+    current: 1, //当前页数
     goodsData: [],
   };
 
@@ -10,6 +14,7 @@ class Mall extends Component {
     axios.get("http://localhost:8080/goods").then((res) => {
       this.setState({
         goodsData: res.data,
+        total: res.data.length,
       });
     });
   }
