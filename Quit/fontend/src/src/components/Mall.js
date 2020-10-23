@@ -16,14 +16,14 @@ class Mall extends Component {
 
   addGoods = (goodsId) => {
     axios.get("http://localhost:8080/order/" + goodsId).then((res) => {
-      console.log("add order success");
+      alert("添加订单成功");
     });
   };
 
   render() {
     return (
       <div className="mall">
-        {this.state.goodsData.length > 0 &&
+        {this.state.goodsData.length > 0 ? (
           this.state.goodsData.map((res) => (
             <div className="card" key={res.id}>
               <img src={res.url} className="card-img-top" alt="goodsImg" />
@@ -40,7 +40,10 @@ class Mall extends Component {
                 </button>
               </div>
             </div>
-          ))}
+          ))
+        ) : (
+          <div className="noData">暂无商品数据</div>
+        )}
       </div>
     );
   }

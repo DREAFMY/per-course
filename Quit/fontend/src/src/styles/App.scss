@@ -1,36 +1,41 @@
 .app {
-    width: 1000px;
-    margin: 0 auto;
-    .body {
-        padding: 20px;
-        background-color: #ededed;
-    }
+  width: 1000px;
+  margin: 0 auto;
+  .body {
+    padding: 20px;
+    background-color: #ededed;
+  }
 }
 .header {
-    a {
-        text-decoration: none;
-        color: #fff;
-    }
-    .active {
-        color: yellowgreen;
-    }
+  a {
+    text-decoration: none;
+    color: #fff;
+  }
+  .active {
+    color: yellowgreen;
+  }
 }
 .mall {
-    display: flex;
-    flex-wrap: wrap;
-    .card {
-        width: 20%;
-        margin: 10px 23px;
-    }
-    .card-text {
-        line-height: 1;
-    }
+  display: flex;
+  flex-wrap: wrap;
+  .card {
+    width: 20%;
+    margin: 10px 23px;
+  }
+  .card-text {
+    line-height: 1;
+  }
 }
 .list {
-    .table {
-        background-color: #fff;
-    }
+  .table {
+    background-color: #fff;
+  }
 }
 .add {
-    
+}
+
+.noData {
+  height: 100px;
+  line-height: 100px;
+  text-align: center;
 }

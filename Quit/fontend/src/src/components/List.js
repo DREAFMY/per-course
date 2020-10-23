@@ -17,7 +17,7 @@ class List extends Component {
   };
   deleteOrder = (orderId) => {
     axios.delete("http://localhost:8080/order/" + orderId).then((res) => {
-      console.log("delete success");
+      alert("删除订单成功");
       this.getOrderList();
     });
   };
@@ -35,7 +35,7 @@ class List extends Component {
             </tr>
           </thead>
           <tbody>
-            {this.state.listData.length > 0 &&
+            {this.state.listData.length > 0 ? (
               this.state.listData.map((res) => (
                 <tr key={res.id}>
                   <td>{res.name}</td>
@@ -52,7 +52,10 @@ class List extends Component {
                     </button>
                   </td>
                 </tr>
-              ))}
+              ))
+            ) : (
+              <div className="noData">暂无订单数据</div>
+            )}
           </tbody>
         </table>
       </div>
