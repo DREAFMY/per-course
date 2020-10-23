@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { browserHistory } from "react-router";
 import axios from "axios";
 
 class Add extends Component {
@@ -40,6 +39,8 @@ class Add extends Component {
     axios
       .post("http://localhost:8080/goods", this.state.params)
       .then(() => {
+        this.props.history.push("/");
+        alert("添加商品成功");
         this.setState({
           params: {
             name: "",
@@ -49,15 +50,12 @@ class Add extends Component {
           },
           tip: "添加商品成功",
         });
-        //  browserHistory.push("/");
       })
       .catch(() => {
+        alert("添加商品失败，请稍后重试");
         this.setState({
           tip: "添加商品失败，请稍后重试",
         });
-      })
-      .finally(() => {
-        alert(this.state.tip);
       });
   };
   handleChange = (event) => {
@@ -92,7 +90,7 @@ class Add extends Component {
               value={this.state.params.name}
               className="form-control"
               id="name"
-              placeholder="请输入商品名称"
+              placeholder="请输入商品名称,英文"
               onChange={this.handleChange}
             />
           </div>
@@ -114,7 +112,7 @@ class Add extends Component {
               value={this.state.params.unit}
               className="form-control"
               id="unit"
-              placeholder="请输入商品单位"
+              placeholder="请输入商品单位，英文"
               onChange={this.handleChange}
             />
           </div>

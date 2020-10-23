@@ -8,6 +8,7 @@ class Mall extends Component {
     pages: 1, //总页数
     current: 1, //当前页数
     goodsData: [],
+    loading: false,
   };
 
   componentDidMount() {
@@ -20,9 +21,20 @@ class Mall extends Component {
   }
 
   addGoods = (goodsId) => {
-    axios.get("http://localhost:8080/order/" + goodsId).then((res) => {
-      alert("添加订单成功");
+    this.setState({
+      loading: true,
     });
+    axios
+      .get("http://localhost:8080/order/" + goodsId)
+      .then((res) => {
+        alert("添加订单成功");
+        this.props.history.push("/list");
+      })
+      .finally(() => {
+        this.setState({
+          loading: false,
+        });
+      });
   };
 
   render() {
@@ -39,6 +51,7 @@ class Mall extends Component {
                 </p>
                 <button
                   className="btn btn-outline-dark"
+                  disabled={this.state.loading}
                   onClick={() => this.addGoods(res.id)}
                 >
                   + add
