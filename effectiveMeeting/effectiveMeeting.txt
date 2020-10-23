@@ -1,0 +1,26 @@
+情景题
+根据下列情景描述，选择一个场景使用7P模型完成对会议的设计。
+
+[Option] Scenario 1
+Our team has 70 stories in the backlog. The stories are already estimated. The PO wants to know what the team can deliver in the next 2 months and she wants commitment from TW. The PO pushes for a lot of functionalities. Your task is to prepare the Iteration Planning session.
+
+Purpose：
+Product：
+People：
+Process：
+Prep：
+Practical Concerns：
+Pitfalls：
+
+
+
+[Option] Scenario 2
+The BAs prepared 40 stories. Some of the stories are a bit vague, some elaboration is needed (possible split as well). The client engagement is relatively new, the team doesn’t have a good understanding of the domain. Your task is to prepare the sizing session. 
+
+Purpose：
+Product：
+People：
+Process：
+Prep：
+Practical Concerns：
+Pitfalls：
