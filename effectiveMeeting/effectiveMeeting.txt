@@ -4,23 +4,57 @@
 [Option] Scenario 1
 Our team has 70 stories in the backlog. The stories are already estimated. The PO wants to know what the team can deliver in the next 2 months and she wants commitment from TW. The PO pushes for a lot of functionalities. Your task is to prepare the Iteration Planning session.
 
-Purpose：
-Product：
-People：
+Purpose：The PO wants to know what the team can deliver in the next 2 months and she wants commitment from TW.
+
+Product： Iteration Planning about the 70 sroties.
+
+People：po,dev,ba,qa,pm
+
 Process：
+	1、PO向大家讲解整体需求，场景，或者产品目标。
+	2、PO逐条按照优先级进行讲解，确定用户故事的验收标准。
+	3、开发团队沟通讨论实现方式，估算工作量，领取相关的任务。
+	4、开发团队针对自己不清楚的地方向PO提出问题。
+
 Prep：
+	1.仔细阅读和理解每张故事卡
+	2.记录下自己疑惑或不解的问题
+	3.分析每张故事卡的可实施性和难度
+
 Practical Concerns：
+	1.线上会议的zoomid
+	2.会议开始时间
+
 Pitfalls：
+	1.视频会议时，有人用电脑做其他的事情
+	2.参会者开始了我们会议话题以外的话题讨论
 
 
 
 [Option] Scenario 2
 The BAs prepared 40 stories. Some of the stories are a bit vague, some elaboration is needed (possible split as well). The client engagement is relatively new, the team doesn’t have a good understanding of the domain. Your task is to prepare the sizing session. 
 
-Purpose：
-Product：
-People：
+Purpose：Some of the stories are a bit vague, some elaboration is needed (possible split as well).
+
+Product：elaboration all stories and create or update the stories.
+
+People：ba,dev,qa,pm
+
 Process：
+	1.主持人带大家过一遍卡，然后让大家同时给出点数
+	2.点数不同，听取意见，再次让大家同时给出点数
+	3.直到大家都同意该故事卡的点数，将点数记录到卡片上
+
 Prep：
+	1.仔细阅读和理解每张故事卡
+	2.分析每张故事卡的难度
+	3.给出自己的预判值
+
 Practical Concerns：
+	1.线上会议的zoomid
+	2.会议开始时间	
+
 Pitfalls：
+	1.视频会议时，有人用电脑做其他的事情
+	2.参会者开始了我们会议话题以外的话题讨论
+	3.点数投票始终不能统一
